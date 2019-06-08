@@ -121,7 +121,7 @@ class FirstStep extends React.Component {
 
     _ckeckBookingDate = (date) => {
         date = new Date(date)
-        if(date.getDay() === 2 || (date.getDate() === 1 && date.getMonth() === 4) || (date.getDate() === 1 && date.getMonth() === 10) || (date.getDate() === 25 && date.getMonth() === 11) || (date < new Date ()) && date.getDate() !== new Date().getDate()) {
+        if(date.getDay() === 0 || date.getDay() === 2 || (date.getDate() === 1 && date.getMonth() === 4) || (date.getDate() === 1 && date.getMonth() === 10) || (date.getDate() === 25 && date.getMonth() === 11) || (date.getDate() === 1 && date.getMonth() === 0) || (date.getDate() === 11 && date.getMonth() === 10) || (date.getDate() === 14 && date.getMonth() === 6) || (date < new Date ()) && date.getDate() !== new Date().getDate()) {
             return false;
         } else {
             return true;
@@ -140,8 +140,9 @@ class FirstStep extends React.Component {
                     <label className="form-control-label required">Visit date</label>
                     <Flatpickr data-enable-time
                         id="visitDateInput"
+                        disableMobile={true}
                         placeholder="Please select a date for your visit"
-                        options={{dateFormat:"d/m/Y", enableTime:false, disable:[function (date) {return (date.getDay() === 2 || (date.getDate() === 1 && date.getMonth() === 4) || (date.getDate() === 1 && date.getMonth() === 10) || (date.getDate() === 25 && date.getMonth() === 11) || (date < new Date () && date.getDate() !== new Date().getDate()));}]}}
+                        options={{dateFormat:"d/m/Y", enableTime:false, disable:[function (date) {return (date.getDay() === 0 || date.getDay() === 2 || (date.getDate() === 1 && date.getMonth() === 4) || (date.getDate() === 1 && date.getMonth() === 10) || (date.getDate() === 25 && date.getMonth() === 11) || (date.getDate() === 11 && date.getMonth() === 10) || (date.getDate() === 1 && date.getMonth() === 0) || (date.getDate() === 14 && date.getMonth() === 6) || (date < new Date(new Date().setDate(new Date().getDate()-1))));}]}}
                         className="form-control"
                         value={this.state.date}
                         onChange={date => {this.setState({date:new Date(date)}) }} />

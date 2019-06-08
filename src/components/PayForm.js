@@ -29,7 +29,6 @@ class PayForm extends React.Component {
     }
 
     onPayPress = () => {
-        console.log(this.props);
         console.log("Je suis la bookingRef");
         console.log(this.props.bookingRef);
         this.setState({isLoading:true})

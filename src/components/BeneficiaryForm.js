@@ -88,8 +88,9 @@ class BeneficiaryForm extends React.Component {
                     <label className="form-control-label required">Birth date</label>
                     <Flatpickr data-enable-time
                         id="birthDateInput"
+                        disableMobile={true}
                         placeholder="We never forgot any birthday"
-                        options={{dateFormat:"d/m/Y"}}
+                        options={{dateFormat:"d/m/Y", enableTime:false}}
                         className="form-control"
                         value={this.state.birthDate}
                         onChange={(date) => this.onFormChanged("birthDate", date) } />

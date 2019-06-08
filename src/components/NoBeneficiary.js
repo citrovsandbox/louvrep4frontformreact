@@ -14,7 +14,6 @@ class NoBeneficiary extends React.Component {
     }
 
     render () {
-        console.log(this.props);
         return (
             <div className="contained">
                 <h4>Oops!</h4>

@@ -8,8 +8,8 @@ import axios from 'axios';
  * MIT Licence - Victor MAHE 2019
  */
 const Hermes = {
-    _url:'http://localhost:8000',
-    // _url:'',
+    // _url:'http://localhost:8000',
+    _url:'',
     _cache:{},
     _isDebugMode:false,
     /**
