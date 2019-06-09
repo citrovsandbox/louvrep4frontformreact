@@ -1,5 +1,6 @@
 import React from "react";
 import Button from '@material-ui/core/Button';
+import { connect } from 'react-redux';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -28,7 +29,7 @@ class SuccessModal extends React.Component {
             <DialogTitle id="alert-dialog-title">Congratulations !</DialogTitle>
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
-                    Your order has been registered. You will receive an email at <b>vmm1996@gmail.com</b> with all of your tickets.<br/>
+                    Your order has been registered. You will receive an email at <b>{this.props.bookingInfo.orderMailing}</b> with all of your tickets.<br/>
                     Welcome to Paris!
                 </DialogContentText>
             </DialogContent>
@@ -42,4 +43,4 @@ class SuccessModal extends React.Component {
     }
 }
 
-export default SuccessModal;
+export default connect (state => state ) (SuccessModal);
